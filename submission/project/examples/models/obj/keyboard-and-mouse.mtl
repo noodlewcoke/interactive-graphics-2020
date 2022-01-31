@@ -1,0 +1,50 @@
+# Blender MTL File: 'None'
+# Material Count: 5
+
+newmtl keyboar_base_mat
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.247059 0.247059 0.247059
+Ks 0.010000 0.010000 0.010000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl keyboard_alfabet_mat
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.010000 0.010000 0.010000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd keyboardAlfabet.jpg
+
+newmtl keyboard_numbers_mat
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.010000 0.010000 0.010000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd keyboardNumbers.jpg
+
+newmtl mouse_circle_button_mat
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.498039 0.498039 0.498039
+Ks 0.010000 0.010000 0.010000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl mouse_mat
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.010000 0.010000 0.010000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd mouseLogo.jpg

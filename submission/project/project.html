@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>My first three.js app</title>
+		<meta charset="utf-8">
+		
+	    <link type="text/css" rel="stylesheet" href="main.css">
+
+	</head>
+	<body>
+		<script src="build/three.js"></script>
+		<script src="examples/js/WebGL.js"></script>
+		<script src="examples/js/libs/stats.min.js"></script>
+		<script src="examples/js/libs/dat.gui.min.js"></script>
+		<script src="examples/js/libs/inflate.min.js"></script>
+		<script src="examples/js/loaders/GLTFLoader.js"></script>
+		<script src="examples/js/loaders/OBJLoader.js"></script>
+		<script src="examples/js/loaders/FBXLoader.js"></script>
+		<script src="examples/js/loaders/MTLLoader.js"></script>
+		<script src="examples/js/controls/OrbitControls.js"></script>
+
+		<script src="examples/js/utils/BufferGeometryUtils.js"></script>
+		<script src="examples/js/shaders/CopyShader.js"></script>
+		<script src="examples/js/postprocessing/EffectComposer.js"></script>
+		<script src="examples/js/postprocessing/RenderPass.js"></script>
+		<script src="examples/js/postprocessing/ShaderPass.js"></script>
+		<script src="examples/js/postprocessing/OutlinePass.js"></script>
+		<script src="examples/js/shaders/FXAAShader.js"></script>
+		<script src="animations.js"></script>
+		<script src="staticObjects.js"></script>
+		<script src="utils.js"></script>
+		<script charset="UTF-8" src="main.js"></script>
+		
+		<div class="left-text-div1" id="progress-bar" style="visibility: hidden;">
+			Progress
+		</div>
+
+		<div class="left-text-div2" id="deadline-bar" style="visibility: hidden;">
+			Deadline
+		</div>
+		<div class="left-text-div5" id="time-bar" style="visibility: visible;">
+			Deadline
+		</div>
+
+		<div class="left-text-div3" id="stamina-bar" style="visibility: hidden;">
+			Stamina
+		</div>
+		<div class="left-text-div4" id="motivation-bar" style="visibility: hidden;">
+			Motivation
+		</div>
+
+		<div class="sleep-text-div" id="sleep-counter" style="visibility: hidden;">
+		</div>
+
+		<div class="problem-text-div" id="deleted-file" style="visibility: hidden;">
+
+			<br>PROBLEM!
+			<br>
+			<br>
+			<br>You accidentally deleted a big file.
+
+			<button type="button-ok" id="deleted-file-button" value="0" style="display: block; left: 25%" onclick = 'deleted_ack_cont(this);'>SUCH IS LIFE...</button> 
+			<button type="button-ok" id="deleted-file-button2" value="0" style="display: block; left: 60%" onclick = 'deleted_ack_other(this);'>GIVE UP</button> 
+
+		</div>
+
+		<div class="problem-text-div" id="fav-show" style="visibility: hidden; top: 20%;">
+
+			<br>PROBLEM!
+			<br>
+			<br>
+			<br>A new season of your favourite
+			<br>
+			<br>
+			<br>TV show just came out.
+			<br>
+			<br>
+			<br><font color="red" > And you REALLY want to see it!</font>
+			<br>
+			<button type="button-ok" id="binge-button" value="0" style="display: block; left: 40%; top: 110%;" onclick = 'bingeEvent(this);'>BINGE WATCH</button> 
+			<br>
+			<br>
+
+			<button type="button-ok" id="couple-eps-button" value="0" style="display: block; left: 30%; top: 135%;" onclick = 'coupleEpsEvent(this);'>WATCH TWO EPISODES</button> 
+			<br>
+			<br>
+
+			<button type="button-ok" id="not-watch-button" value="0" style="display: block; left: 40%; top: 160%;" onclick = 'notWatchEvent(this);'>DON'T WATCH</button> 
+
+
+		</div>
+		<div class="problem-text-div" id="going-out" style="visibility: hidden; left: 15%; top: 20%;">
+
+			<br>PROBLEM!
+			<br>
+			<br>
+			<br>Your friends are going out.
+			<br>
+			<br>
+			<br>They are calling you to come.
+			<br>
+			<br>
+			<br><font color="red" > And you REALLY want to go!</font>
+			<br>
+
+			<button type="button-ok" id="going-out-button" value="0" style="display: block; left: 25%; top: 130%;" onclick = 'going_out_accept(this);'>ACCEPT</button> 
+			<button type="button-ok" id="going-out-button2" value="0" style="display: block; left: 60%; top: 130%;" onclick = 'going_out_reject(this);'>REJECT</button> 
+
+		</div>
+
+		<div class="dummy-text-div" id="center-text-dummy" style="visibility: hidden;">
+			
+		</div>
+
+		<div class="bg" id="10hours-later" style="visibility: hidden;">
+			<div class='padding'></div>
+			<img class='img' src="10hours-later.jpg">  
+			<div class='padding'></div>
+		</div>
+
+		<div class="bg" id="2hours-later" style="visibility: hidden;">
+			<div class='padding'></div>
+			<img class='img' src="2hours-later.jpg">  
+			<div class='padding'></div>
+		</div>
+
+		<div class="bg" id="2hours-later2" style="visibility: hidden;">
+			<div class='padding'></div>
+			<img class='img' src="2hours-later2.jpg">  
+			<div class='padding'></div>
+		</div>
+
+		<div>
+			<button type="button-ok" id="typing-button" value="0" style="visibility: hidden; display: block; left: 45%; top: 50%;"onclick = 'typing_button(this);'>WORK</button> 
+		</div>
+
+		<!-- <div>
+			<button type="button-ok" id="video-button" value="0" style="visibility: hidden; display: block; left: 40%; top: 60%;"onclick = 'video_button(this);'>WATCH VIDEO</button> 
+		</div> -->
+
+		<div>
+			<button type="button-ok" id="badvideo-button" value="0" style="visibility: hidden; display: block; left: 40%; top: 55%;"onclick = 'badvideo_button(this);'>FUN VIDEOS</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="goodvideo-button" value="0" style="visibility: hidden; display: block; left: 35%; top: 65%;"onclick = 'goodvideo_button(this);'>MOTIVATING VIDEOS</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="back-button" value="0" style="visibility: hidden; display: block; left: 45%; top: 75%;"onclick = 'back_button(this);'>BACK</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="sleep-button" value="0" style="visibility: hidden; display: block; left: 15%; top: 80%;"onclick = 'sleep_button(this);'>SLEEP</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="laydown-button" value="0" style="visibility: hidden; display: block; left: 35%; top: 80%;"onclick = 'laydown_button(this);'>LAY DOWN</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="stop-button" value="0" style="visibility: hidden; display: block; left: 45%; top: 80%;"onclick = 'stop_button(this);'>STOP</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="startGame-button" value="0" style="visibility: visible; display: block; left: 45%; top: 40%;"onclick = 'startGame_button(this);'>START</button> 
+		</div>
+		<div>
+			<button type="button-ok" id="instructions-button" value="0" style="visibility: visible; display: block; left: 39%; top: 50%;"onclick = 'instructions_button(this);'>INSTRUCTIONS</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="next1-button" value="0" style="visibility: hidden; display: block; left: 80%; top: 80%;"onclick = 'next1_button(this);'>NEXT</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="next2-button" value="0" style="visibility: hidden; display: block; left: 80%; top: 80%;"onclick = 'next2_button(this);'>NEXT</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="next3-button" value="0" style="visibility: hidden; display: block; left: 80%; top: 80%;"onclick = 'next3_button(this);'>NEXT</button> 
+		</div>
+		<div>
+			<button type="button-ok" id="next4-button" value="0" style="visibility: hidden; display: block; left: 80%; top: 80%;"onclick = 'next4_button(this);'>DONE</button> 
+		</div>
+		<div>
+			<button type="button-ok" id="difficulty-button" value="0" style="visibility: visible; display: block; left: 41.5%; top: 60%;"onclick = 'difficulty_button(this);'>DIFFICULTY</button> 
+		</div>
+		<div>
+			<button type="button-ok" id="easy-button" value="0" style="visibility: hidden; display: block; left: 20%; top: 50%;"onclick = 'easy_diff_button(this);'>HARD WORKER</button> 
+		</div>
+		<div>
+			<button type="button-ok" id="hard-button" value="0" style="visibility: hidden; display: block; left: 55%; top: 50%;"onclick = 'hard_diff_button(this);'>PROCRASTINATOR</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="submit-button" value="0" style="visibility: hidden; display: block; left: 44%; top: 70%; background: rgb(250, 0, 0);"onclick = 'submit_button(this);'>SUBMIT</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="yes-button" value="0" style="visibility: hidden; display: block; left: 46%; top: 65%; background: rgb(250, 0, 0);"onclick = 'yes_button(this);'>YES</button> 
+		</div>
+
+		<div>
+			<button type="button-ok" id="backMenu-button" value="0" style="visibility: hidden; display: block; left: 38%; top: 75%;"onclick = 'backMenu_button(this);'>BACK TO MENU</button> 
+		</div>
+
+		<div class="negated-progress-div" id="negated-progress" style="visibility: hidden;">
+		</div>
+
+		<div class="negated-stamina-div" id="negated-stamina" style="visibility: hidden;">
+		</div>
+
+		<div class="dummy-text-div" id="project-complete" style="visibility: hidden; top: 20%">
+		</div>
+
+		<div class="negated-motivation-div" id="negated-motivation" style="visibility: hidden;">
+		</div>
+
+	</body>
+		
+</html>

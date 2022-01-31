@@ -1,0 +1,25 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl Sofa_gelb
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.690196 0.690196 0.690196
+Ks 0.100000 0.100000 0.100000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd Sofa_gelb.jpg
+map_Ke Sofa_gelb.jpg
+map_d Sofa_gelb.jpg
+
+newmtl Sofa_grau
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.690196 0.690196 0.690196
+Ks 0.100000 0.100000 0.100000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Sofa_grau.jpg
+map_Ke Sofa_grau.jpg

@@ -1,0 +1,212 @@
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+body {
+	margin: 0;
+	background-color: #000;
+	color: #fff;
+	font-family: Monospace;
+	font-size: 13px;
+	line-height: 24px;
+}
+
+
+button {
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	font-family: Orbitron;
+	cursor: pointer;
+	text-transform: uppercase;
+	display: block;
+	background: rgb(240, 201, 72);
+	padding:none;
+	border-style:solid;
+	font-size: 50px;
+	font-weight: bold;
+	
+	color: rgb(0, 0, 0);
+}
+
+.button-ok{
+	position: absolute;
+	/* top: 150px; */
+
+	text-transform: uppercase;
+	display: block;
+	background: none;
+	padding:none;
+	border-style:none;
+	font-size: 26px;
+	color: rgb(0, 255, 191);
+	visibility:hidden;
+	left: 70px;
+	
+}
+
+.left-text-div1 {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	color: rgb(218, 173, 29);
+	font-size: 48px;
+
+}
+
+
+.left-text-div2 {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 10%;
+	left: 5%;
+	color: rgb(218, 173, 29);
+	font-size: 48px;
+
+}
+
+.left-text-div3 {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 15%;
+	left: 5%;
+	color: rgb(36, 247, 8);
+	font-size: 48px;
+
+}
+
+
+.left-text-div4 {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 20%;
+	left: 5%;
+	color: rgb(255, 11, 113);
+	font-size: 48px;
+
+}
+
+.left-text-div5 {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 5%;
+	left: 85%;
+	color: rgb(218, 173, 29);
+	font-size: 48px;
+
+}
+
+.sleep-text-div {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 50%;
+	left: 55%;
+	color: rgb(218, 173, 29);
+	font-size: 120px;
+
+}
+
+.problem-text-div {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	text-align: center;
+	text-shadow: #FC0 1px 0 10px;
+	color: rgb(238, 216, 18);
+	font-size: 80px;
+}
+
+.dummy-text-div {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+	text-shadow: #FC0 1px 0 10px;
+	color: rgb(238, 216, 18);
+	font-size: 80px;
+}
+
+.negated-progress-div {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 10%;
+	left: 30%;
+	text-align: center;
+	text-shadow: #FC0 1px 0 10px;
+
+	color: rgb(255, 255, 255);
+	font-size: 80px;
+}
+
+.negated-stamina-div {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	text-align: center;
+	text-shadow: #FC0 1px 0 10px;
+	color: rgb(36, 247, 8);
+	font-size: 80px;
+}
+
+.negated-motivation-div {
+	font-family: Orbitron; 
+	display:block;
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	text-shadow: #FC0 1px 0 10px;
+
+	color: rgb(255, 11, 113);
+	font-size: 80px;
+}
+
+img {
+	display: block;
+	margin-left: 0mm;
+	margin-right: 0mm;
+	/* width: 20%; */
+	/* height: 100%; */
+
+  /* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bg{
+	margin: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display:flex;
+	flex-direction: column;
+  }
+  
+  .img {
+	width:100vw;
+	align-self: center;
+	
+	height: auto;
+  }
+  
+  .padding {
+	flex: 1;
+	background-color: pink; 
+  }
+
+
